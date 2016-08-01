@@ -4,6 +4,9 @@ Built on the NTR Debugger by Cell99 - https://github.com/44670/NTRClient
 
 ![NitroStreamScreenshot](https://i.imgur.com/WGqP5mK.png)
 
+# Download
+https://github.com/JakeHL/NitroStream/releases/
+
 # Dependencies
 You'll need NTRViewer which can be found in the starter pack here:
 https://github.com/44670/BootNTR/releases
