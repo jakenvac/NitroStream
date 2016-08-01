@@ -18,7 +18,7 @@ To use, either place the executable in the same directory as NTViewer.exe or set
 GPLV2
  
 # TODO
-* Host the NTRviewer window within the program to
+* Host the NTRViewer window within the program to
     * Allow us to manipulate the window a bit more than we can by default
     * Let us manage the amount of instances of NTRViewer
 * Whatever anyone else requests -> String.Format(jlangford{0}outlook{1}com, "@", ".") 😉
