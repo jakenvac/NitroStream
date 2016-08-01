@@ -1,0 +1,88 @@
+﻿<Window x:Class="Nitro_Stream.View.NitroStreamMain"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Nitro_Stream"
+        xmlns:View="clr-namespace:Nitro_Stream.View"
+        xmlns:ViewModel="clr-namespace:Nitro_Stream.ViewModel"
+        mc:Ignorable="d"
+        Icon="{StaticResource ICO_Main}"
+        ResizeMode="NoResize"
+        Title="Nitro Stream" SizeToContent="WidthAndHeight" MinWidth="600" MaxWidth="600">
+    <Window.DataContext>
+        <ViewModel:NitroStreamViewModel />
+    </Window.DataContext>
+    <Grid>
+        <Grid.Resources>
+            <Style TargetType="{x:Type TextBlock}">
+                <Setter Property="VerticalAlignment" Value="Center" />
+                <Setter Property="FontSize" Value="15" />
+            </Style>
+            <Style TargetType="{x:Type TextBox}">
+                <Setter Property="VerticalAlignment" Value="Center" />
+                <Setter Property="FontSize" Value="15" />
+            </Style>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <!-- Toolbar -->
+        <DockPanel>
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="_Options" >
+                    <MenuItem Header="Configure NTRViewer path" Click="ConfigureViewerPath" />
+                    <MenuItem>
+                        <MenuItem.Header>
+                            <CheckBox Content="Show Log" IsChecked="{Binding ViewSettings.ShowLog}" />
+                        </MenuItem.Header>
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Header="_About">
+                    <MenuItem Header="Credits">
+                        <StackPanel>
+                            <TextBlock Text="Cell9 for all their NTR efforts." />
+                            <TextBlock Text="NekoMichi for the brilliant screen cap tutorial." />
+                            <TextBlock Text="Everyone else who has contributed to 3DS CFW" />
+                        </StackPanel>
+                    </MenuItem>
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+
+        <!-- Window content -->
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <View:Options />
+            <TextBox Grid.Row="1"
+                     MinHeight="200"
+                     MaxHeight="200"
+                     Visibility="{Binding ViewSettings.ShowLog, Converter={StaticResource BoolToVis}}"
+                     TextWrapping="Wrap" Foreground="White" Background="Black"
+                     IsReadOnly="True"
+                     VerticalScrollBarVisibility="Auto"
+                     Text="{Binding runningLog, Mode=OneWay}" />
+        </Grid>
+        
+        <!-- Footer -->
+        <Border Grid.Row="3" >
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Color="Transparent" Offset="0"/>
+                    <GradientStop Color="#33CCCC" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid Margin="3,0">
+                <TextBlock Text="Nitro Stream - http://jlangford.uk" />
+                <TextBlock Text="Thanks to Cell9 for all their NTR related works" HorizontalAlignment="Right" />
+            </Grid>
+        </Border>
+        
+    </Grid>
+</Window>

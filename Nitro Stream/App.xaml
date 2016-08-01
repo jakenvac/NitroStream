@@ -1,0 +1,17 @@
+﻿<Application x:Class="Nitro_Stream.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Nitro_Stream"
+             xmlns:converters="clr-namespace:Nitro_Stream.Resources.Converters"
+             StartupUri="View/NitroStreamMain.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <converters:SelectedIndexToBoolean x:Key="BoolToIndex" />
+            <converters:SelectedIndexToEnum x:Key="EnumToIndex" />
+            <converters:BooleanToVisible x:Key="BoolToVis" />
+
+            <BitmapImage x:Key="ICO_Main" UriSource="icon.ico" />
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
