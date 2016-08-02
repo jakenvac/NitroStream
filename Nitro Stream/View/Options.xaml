@@ -28,6 +28,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
@@ -49,7 +50,7 @@
         <TextBlock Text="View Mode:" Grid.Row="6" />
         <ComboBox Grid.Row="6" Grid.Column="2" SelectedIndex="{Binding ViewSettings.ViewMode, Converter={StaticResource EnumToIndex}}" >
             <TextBlock Text="Vertical" />
-            <TextBlock Text="Horizontal" />                     
+            <TextBlock Text="Horizontal" />
         </ComboBox>
 
         <TextBlock Text="Picture Quality:" Grid.Row="8" />
@@ -96,13 +97,20 @@
                 <TextBlock Text="Priorty Mode Enabled:" Grid.Row="4" />
                 <ComboBox Grid.Row="4" Grid.Column="2" SelectedIndex="{Binding ViewSettings.PriorityMode, Converter={StaticResource BoolToIndex}}" >
                     <TextBlock Text="False" />
-                    <TextBlock Text="True" />                    
+                    <TextBlock Text="True" />
                 </ComboBox>
 
             </Grid>
         </GroupBox>
 
-        <Button Content="Connect [ENTER]" Grid.ColumnSpan="3" Grid.Row="10" IsDefault="True" Click="ConnectButton_Click" />
+        <Button Content="Send memory patch ⚠️" Grid.ColumnSpan="3" Grid.Row="10" Margin="0,0,0,4" Click="SendMemPatch">
+            <Button.ToolTip>
+                <StackPanel>
+                    <TextBlock Width="600" TextWrapping="Wrap" Text="Some games (OOT/Pokemon etc.) will disable streaming when launched from the home menu. Send this patch before initiating remoteplay to prevent that if it happens. This may prevent netowkring in games, however, so only use it when necessary." />
+                </StackPanel>
+            </Button.ToolTip>
+        </Button>
+        <Button Content="Connect [ENTER]" Grid.ColumnSpan="3" Grid.Row="11" IsDefault="True" Click="ConnectButton_Click" />
 
     </Grid>
 </UserControl>

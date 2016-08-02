@@ -20,24 +20,27 @@ namespace Nitro_Stream.View
     /// </summary>
     public partial class Options : UserControl
     {
+
+        private ViewModel.NitroStreamViewModel _Vm;
+
         public Options()
         {
             InitializeComponent();
+            ViewModel.NitroStreamViewModel vm = this.DataContext as ViewModel.NitroStreamViewModel;
         }
 
         private void ConnectButton_Click(object sender, RoutedEventArgs e)
         {
-            ViewModel.NitroStreamViewModel vm = this.DataContext as ViewModel.NitroStreamViewModel;
-            if (vm != null)
+            if (_Vm != null)
             {
-                if (string.IsNullOrEmpty(vm.ViewSettings.IPAddress) == false)
+                if (string.IsNullOrEmpty(_Vm.ViewSettings.IPAddress) == false)
                 {
-                    Model.ViewSettings.Save(vm.configPath, vm.ViewSettings);
-                    vm.InitiateRemotePlay();
+                    Model.ViewSettings.Save(_Vm.configPath, _Vm.ViewSettings);
+                    _Vm.InitiateRemotePlay();
                 }
                 else
                 {
-                    vm.WriteToLog("IP Address can't be empty");
+                    _Vm.WriteToLog("IP Address can't be empty");
                 }
             }
         }
@@ -47,14 +50,21 @@ namespace Nitro_Stream.View
             TextBox t = sender as TextBox;
             if (string.IsNullOrEmpty(t.Text))
             {
-                ViewModel.NitroStreamViewModel vm = this.DataContext as ViewModel.NitroStreamViewModel;
-                if (vm != null)
+                if (_Vm != null)
                 {
-                    vm.WriteToLog("ERR: All fields must have a value.");
+                    _Vm.WriteToLog("ERR: All fields must have a value.");
                     t.Text = "1";
                 }
             }
 
+        }
+
+        private void SendMemPatch(object sender, RoutedEventArgs e)
+        {
+            if (_Vm != null)
+            {
+                
+            }
         }
     }
 }

@@ -14,6 +14,14 @@ https://github.com/44670/BootNTR/releases
 # Usage
 To use, either place the executable in the same directory as NTViewer.exe or set it's location before connecting in the options menu of the application.
 
+# Changelog
+2016 - 08 - 02
+Added memory patch button to fix when some games prevent streaming. This fix can potentialy disable networking in some games, so use wisely.
+To fix games that prevent streaming & networking is needed, try connecting to the internet through that game's features.
+
+Fixed some issues with relaunching NTRViewer once a connection had been established.
+
+
 # License
 GPLV2
  
@@ -22,3 +30,4 @@ GPLV2
     * Allow us to manipulate the window a bit more than we can by default
     * Let us manage the amount of instances of NTRViewer
 * Whatever anyone else requests -> String.Format(jlangford{0}outlook{1}com, "@", ".") 😉
+
