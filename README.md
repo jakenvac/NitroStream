@@ -16,7 +16,7 @@ To use, either place the executable in the same directory as NTViewer.exe or set
 
 # Changelog
 2016 - 08 - 02
-Added memory patch button to fix when some games prevent streaming. This fix can potentialy disable networking in some games, so use wisely.
+Added memory patch button to fix when some games prevent streaming. This fix can potentially disable networking in some games, so use wisely.
 To fix games that prevent streaming & networking is needed, try connecting to the internet through that game's features.
 
 Fixed some issues with relaunching NTRViewer once a connection had been established.
