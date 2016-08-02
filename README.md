@@ -2,7 +2,7 @@
 Allows the user to easily initiate a connection to NTRViewer for NTR CFW on the Nintendo 3DS
 Built on the NTRDebugger by Cell99 - https://github.com/44670/NTRClient
 
-![NitroStreamScreenshot](https://i.imgur.com/WGqP5mK.png)
+![NitroStreamScreenshot](http://i.imgur.com/o0WLaG6g.png)
 
 # Download
 https://github.com/JakeHL/NitroStream/releases/
