@@ -105,12 +105,7 @@ namespace Nitro_Stream.ViewModel
 
         public void InitiateRemotePlay()
         {
-            if (_Connected == false)
-            {
-                Connect(_ViewSettings.IPAddress);
-            }
-            else
-                _ntrClient_Connected(_Connected);
+            Connect(_ViewSettings.IPAddress);
         }
 
         public void Connect(string host)
@@ -121,14 +116,8 @@ namespace Nitro_Stream.ViewModel
 
         public void MemPatch()
         {
-            _PatchMem = true;
-            if (_Connected == false)
-            {
-                
-                Connect(_ViewSettings.IPAddress);
-            }
-            else
-                _ntrClient_Connected(_Connected);
+            _PatchMem = true; 
+            Connect(_ViewSettings.IPAddress);            
             WriteToLog("OK: Memory patch applied");
         }
 

@@ -26,7 +26,7 @@ namespace Nitro_Stream.View
         public Options()
         {
             InitializeComponent();
-            ViewModel.NitroStreamViewModel vm = this.DataContext as ViewModel.NitroStreamViewModel;
+            _Vm = this.DataContext as ViewModel.NitroStreamViewModel;
         }
 
         private void ConnectButton_Click(object sender, RoutedEventArgs e)
@@ -63,8 +63,13 @@ namespace Nitro_Stream.View
         {
             if (_Vm != null)
             {
-                
+                _Vm.MemPatch();
             }
+        }
+
+        private void OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            _Vm = this.DataContext as ViewModel.NitroStreamViewModel;
         }
     }
 }
