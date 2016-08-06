@@ -66,8 +66,8 @@ namespace Nitro_Stream.ViewModel
 
                         args.Append("-l ");
                         args.Append((_ViewSettings.ViewMode == Model.Orientations.Vertical) ? "0 " : "1 ");
-                        args.Append("-t " + _ViewSettings.TopScale.ToString() + " ");
-                        args.Append("-b " + _ViewSettings.BottomScale.ToString());
+                        args.Append("-t " + _ViewSettings.TopScale.ToString().Replace(',','.') + " ");
+                        args.Append("-b " + _ViewSettings.BottomScale.ToString().Replace(',','.'));
 
                         System.Diagnostics.ProcessStartInfo p = new System.Diagnostics.ProcessStartInfo(_ViewSettings.ViewerPath);
                         p.Verb = "runas";
