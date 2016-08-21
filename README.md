@@ -15,6 +15,13 @@ https://github.com/44670/BootNTR/releases
 To use, either place the executable in the same directory as NTViewer.exe or set it's location before connecting in the options menu of the application.
 
 # Changelog
+2016 - 08 - 21
+Improved the efficiency of Kurobyte's fix.
+
+2016 - 08 - 21
+Merged Kurobyte's fix for using ',' as well as '.' in Doubles.
+Fixed priority mode prompts.
+
 2016 - 08 - 02
 Added memory patch button to fix when some games prevent streaming. This fix can potentially disable networking in some games, so use wisely.
 To fix games that prevent streaming & networking is needed, try connecting to the internet through that game's features.

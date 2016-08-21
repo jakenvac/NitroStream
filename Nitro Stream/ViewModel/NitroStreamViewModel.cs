@@ -65,7 +65,7 @@ namespace Nitro_Stream.ViewModel
                         StringBuilder args = new StringBuilder();
 
                         args.Append("-l ");
-                        args.Append((_ViewSettings.ViewMode == Model.Orientations.Vertical) ? "0 " : "1 ");
+                        args.Append(((_ViewSettings.ViewMode == Model.Orientations.Vertical) ? "0" : "1") + " ");
                         args.Append("-t " + _ViewSettings.TopScale.ToString() + " ");
                         args.Append("-b " + _ViewSettings.BottomScale.ToString());
 
