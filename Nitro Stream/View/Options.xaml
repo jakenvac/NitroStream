@@ -95,10 +95,10 @@
                 <TextBlock Text="Quality of Service Value:" Grid.Row="2"/>
                 <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding ViewSettings.QosValue}" />
 
-                <TextBlock Text="Priorty Mode Enabled:" Grid.Row="4" />
+                <TextBlock Text="Priorty Screen:" Grid.Row="4" />
                 <ComboBox Grid.Row="4" Grid.Column="2" SelectedIndex="{Binding ViewSettings.PriorityMode, Converter={StaticResource BoolToIndex}}" >
-                    <TextBlock Text="False" />
-                    <TextBlock Text="True" />
+                    <TextBlock Text="Top" />
+                    <TextBlock Text="Bottom" />
                 </ComboBox>
 
             </Grid>
