@@ -75,7 +75,7 @@ namespace Nitro_Stream.ViewModel
                         Process.Start(p);
                     }
                     else
-                        WriteToLog("NTRViewer not found, please run this manually as admin");
+                        WriteToLog("NTRViewer not found, please run it manually as admin");
                 }
             }
         }

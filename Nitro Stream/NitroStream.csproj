@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Nitro_Stream</RootNamespace>
-    <AssemblyName>Nitro Stream</AssemblyName>
+    <AssemblyName>NitroStream</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -38,6 +38,10 @@
     <ApplicationIcon>icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Octokit, Version=0.21.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Octokit.0.21.1\lib\net45\Octokit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -61,6 +65,7 @@
     </ApplicationDefinition>
     <Compile Include="Model\ModelBase.cs" />
     <Compile Include="Model\NtrClient.cs" />
+    <Compile Include="Model\Updater.cs" />
     <Compile Include="Model\ViewSettings.cs" />
     <Compile Include="Resources\Converters\BooleanToVisible.cs" />
     <Compile Include="Resources\Converters\SelectedIndexToEnum.cs" />
@@ -105,6 +110,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
