@@ -39,5 +39,19 @@ namespace Nitro_Stream.View
                     vm.ViewSettings.ViewerPath = fd.FileName;
             }
         }
+
+        private void Update_Click(object sender, RoutedEventArgs e)
+        {
+            ViewModel.NitroStreamViewModel vm = this.DataContext as ViewModel.NitroStreamViewModel;
+            if (vm != null)
+                vm.Updater.GetUpdate();
+        }
+
+        private void Donate_Click(object sender, RoutedEventArgs e)
+        {
+            ViewModel.NitroStreamViewModel vm = this.DataContext as ViewModel.NitroStreamViewModel;
+            if (vm != null)
+                vm.Donate();
+        }
     }
 }

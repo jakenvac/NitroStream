@@ -11,12 +11,17 @@ namespace Nitro_Stream.ViewModel
 {
     class NitroStreamViewModel : ViewModelBase
     {
+
+        public static string Version { get { return System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString(); } }
+
         Model.NtrClient _NtrClient;
         System.Timers.Timer _DisconnectTimeout;
         bool _PatchMem;
         bool _Connected;
 
         public string configPath { get { return System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "config.xml"); } }
+
+        public Model.Updater Updater { get; set; }
 
         private StringBuilder _RunningLog;
         public string runningLog
@@ -41,6 +46,13 @@ namespace Nitro_Stream.ViewModel
             AppDomain.CurrentDomain.UnhandledException += ExceptionToLog;
 
             _RunningLog = new StringBuilder("");
+
+            Updater = new Model.Updater();
+        }
+
+        internal void Donate()
+        {
+            System.Diagnostics.Process.Start("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ASKURE99X999W");
         }
 
         private void _ntrClient_Connected(bool Connected)

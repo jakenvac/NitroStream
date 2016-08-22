@@ -50,6 +50,8 @@
                         </StackPanel>
                     </MenuItem>
                 </MenuItem>
+                <MenuItem Header="Donate" Click="Donate_Click" />
+                <MenuItem Header="Update Available!" Background="#FF9999" Click="Update_Click" Visibility="{Binding Updater.UpdateAvailable, Converter={StaticResource BoolToVis}}" />
             </Menu>
         </DockPanel>
 
