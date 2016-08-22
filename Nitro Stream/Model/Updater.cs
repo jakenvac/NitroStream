@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
+
 namespace Nitro_Stream.Model
 {
     class Updater
@@ -14,7 +15,7 @@ namespace Nitro_Stream.Model
         public bool UpdateAvailable { get; set; }
 
         public Updater()
-        {
+        { 
             if (File.Exists(Path.Combine(_BaseDirectory, "Octokit.dll")))
             {
                 LoadAssembly();
