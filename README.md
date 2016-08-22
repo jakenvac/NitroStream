@@ -8,6 +8,10 @@ Built on the NTRDebugger by Cell99 - https://github.com/44670/NTRClient
 https://github.com/JakeHL/NitroStream/releases/
 
 # Dependencies
+Requires octokit for the update notifications, this is now shipped with the application.
+
+.Net 4.6.1
+
 You'll need NTRViewer which can be found in the starter pack here:
 https://github.com/44670/BootNTR/releases
 
@@ -15,6 +19,9 @@ https://github.com/44670/BootNTR/releases
 To use, either place the executable in the same directory as NTViewer.exe or set it's location before connecting in the options menu of the application.
 
 # Changelog
+2016 - 08 - 22
+Added update functionality & donate button
+
 2016 - 08 - 21
 Improved the efficiency of Kurobyte's fix.
 

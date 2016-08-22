@@ -39,9 +39,6 @@ namespace Nitro_Stream.Model
             localVer = ViewModel.NitroStreamViewModel.Version.Replace(".", "");
             int sver, lver;
 
-            if (System.Diagnostics.Debugger.IsAttached)
-                serverVer = "999";
-
             if (int.TryParse(serverVer, out sver) && int.TryParse(localVer, out lver))
                 _UpdateAvailable = sver > lver;
             OnPropertyChanged("UpdateAvailable");            
