@@ -43,5 +43,5 @@ GPLV2
 * Host the NTRViewer window within the program to
     * Allow us to manipulate the window a bit more than we can by default
     * Let us manage the amount of instances of NTRViewer
-* Whatever anyone else requests -> String.Format(jlangford{0}outlook{1}com, "@", ".") 😉
+* Whatever anyone else requests -> String.Format("jlangford{0}outlook{1}com", "@", ".") 😉
 
