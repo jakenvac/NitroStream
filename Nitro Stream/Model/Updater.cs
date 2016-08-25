@@ -27,21 +27,28 @@ namespace Nitro_Stream.Model
 
         private async void CheckUpdate()
         {
-            var client = new Octokit.GitHubClient(new Octokit.ProductHeaderValue("NitroStream"));
-            var Latest = await client.Repository.Release.GetLatest("JakeHL", "NitroStream");
+            try
+            {
+                var client = new Octokit.GitHubClient(new Octokit.ProductHeaderValue("NitroStream"));
+                var Latest = await client.Repository.Release.GetLatest("JakeHL", "NitroStream");
 
-            if (System.Diagnostics.Debugger.IsAttached)
-                GetStats(client);            
+                if (System.Diagnostics.Debugger.IsAttached)
+                    GetStats(client);
 
-            _LatestUrl = Latest.HtmlUrl;
-            string serverVer, localVer;
-            serverVer = Latest.TagName.Replace(".", "").Replace("v", "0");
-            localVer = ViewModel.NitroStreamViewModel.Version.Replace(".", "");
-            int sver, lver;
+                _LatestUrl = Latest.HtmlUrl;
+                string serverVer, localVer;
+                serverVer = Latest.TagName.Replace(".", "").Replace("v", "0");
+                localVer = ViewModel.NitroStreamViewModel.Version.Replace(".", "");
+                int sver, lver;
 
-            if (int.TryParse(serverVer, out sver) && int.TryParse(localVer, out lver))
-                _UpdateAvailable = sver > lver;
-            OnPropertyChanged("UpdateAvailable");            
+                if (int.TryParse(serverVer, out sver) && int.TryParse(localVer, out lver))
+                    _UpdateAvailable = sver > lver;
+                OnPropertyChanged("UpdateAvailable");
+            }
+            catch
+            {
+
+            }            
         }
 
         private async void GetStats(GitHubClient client)
