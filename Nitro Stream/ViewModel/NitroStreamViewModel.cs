@@ -63,7 +63,7 @@ namespace Nitro_Stream.ViewModel
                 if (_PatchMem)
                 {
                     byte[] bytes = { 0x70, 0x47 };
-                    _WriteToDeviceMemory(0x0105AE4, bytes, 0x1a);
+                    _WriteToDeviceMemory(0x00105B00, bytes, 0x1a);
                     _PatchMem = false;
                 }
                 else
